@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id ="@+id/view_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:background="#BF97E6">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:text="@string/initial_message"
+        style="@style/textView" />
+
+
+    <EditText
+        android:id="@+id/et"
+        android:hint="@string/et_hint"
+        style="@style/editText"
+        />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:text="@string/about_message"
+        style="@style/textView"
+        android:background="#DBEDD7"
+    />
+
+</LinearLayout>

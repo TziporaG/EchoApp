@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="editText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/standard_margin</item>
+        <item name="android:layout_margin">@dimen/standard_margin</item>
+        <item name="android:layout_marginBottom">@dimen/standard_margin</item>
+        <item name="android:ems">25</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">text</item>
+        <item name ="android:background">#C3EABC</item>
+        <item name ="android:padding">50dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+
+    </style>
+
+    <style name="textView">
+        <item name="android:ems">25</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/standard_margin</item>
+        <item name="android:layout_marginBottom">@dimen/standard_margin</item>
+        <item name="android:layout_margin">@dimen/standard_margin</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
+        <item name ="android:background">@color/green</item>
+        <item name ="android:padding">20dp</item>
+    </style>
+
+
+</resources>
