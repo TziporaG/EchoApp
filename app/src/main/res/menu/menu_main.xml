@@ -2,9 +2,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.echoapp.activities.MainActivity">
-    <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
+
+        <item
+            android:id="@+id/action_toggle_display_entries"
+            android:checkable="true"
+            android:title="@string/entry_menu"
+            app:showAsAction="never" />
+
+        <item
+            android:id="@+id/click_icon_clear_entries"
+            android:checkable="true"
+            android:title="@string/clear_entry_menu"
+            app:showAsAction="always"
+            android:icon="@android:drawable/ic_delete"/>
+
+        <item
+            android:id="@+id/action_about"
+            android:title="@string/about_menu_header"
+            app:showAsAction="never" />
+
+
+
 </menu>

@@ -1,32 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id ="@+id/view_layout"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    android:background="#BF97E6">
+    app:layout_constraintBottom_toTopOf="@+id/fab"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tv1"
-        android:text="@string/initial_message"
-        style="@style/textView" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25">
+
+        <TextView
+            android:id="@+id/tv1"
+            style="@style/textViewHeader"
+            android:text="@string/initial_message" />
 
 
-    <EditText
-        android:id="@+id/et"
-        android:hint="@string/et_hint"
-        style="@style/editText"
-        />
+        <EditText
+            android:id="@+id/et"
+            style="@style/editText"
+            android:hint="@string/et_hint" />
 
-    <TextView
-        android:id="@+id/tv2"
-        android:text="@string/about_message"
-        style="@style/textView"
-        android:background="#DBEDD7"
-    />
+        <TextView
+            android:id="@+id/tv2"
+            style="@style/textView"
+            android:background="@color/primaryLightColor"
+            android:text="@string/about_message" />
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv3"
+            style="@style/textViewHeader"
+            android:layout_marginBottom="0dp"
+            android:text="@string/tv_header" />
+
+        <TextView
+            android:id="@+id/tv4"
+            style="@style/textView"
+            android:layout_marginTop="0dp"
+            android:text="" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

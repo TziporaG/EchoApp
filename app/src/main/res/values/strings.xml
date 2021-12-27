@@ -2,12 +2,18 @@
     <string name="app_name">Echo App</string>
     <string name="action_settings">Settings</string>
 
-    <string name ="initial_message">Welcome to the Echo App! \n Type in a message and then click on the button to see its echo! \n\n You say:</string>
+    <string name ="initial_message">Welcome to the Echo App! \n Please enter Text:</string>
     <string name ="et_hint">Type message here </string>
 
 
-    <string name ="about_message">Tzipora Gutmanns message will appear here</string>
+    <string name ="about_message">Your message will appear here</string>
 
+    <string name ="tv_header">Entries List</string>
 
+    <string name ="about_menu_header">About</string>
+    <string name ="about_menu_title">About Echo App</string>
+    <string name ="about_menu">See your message echoed back to you! \nBy Tzipora Gutmann (MCON 521, Fall 21)</string>
 
+    <string name ="entry_menu">Display Prior Entries</string>
+    <string name ="clear_entry_menu">Clear Prior Entries</string>
 </resources>

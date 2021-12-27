@@ -1,11 +1,16 @@
 package com.example.echoapp.activities;
 
+import static com.example.echoapp.lib.Utils.showInfoDialog;
+
 import android.os.Bundle;
 
 import com.example.echoapp.R;
+import com.example.echoapp.lib.Utils;
+import com.example.echoapp.model.UserEntryList;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -29,8 +34,10 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     private EditText et;
-    private TextView tv1, tv;
+    private TextView tv1, tv2,  tv3, tv4;
     private Snackbar mSnackBar;
+    private UserEntryList userEntryList;
+    private boolean mShowHistory;
 
 
     @Override
@@ -61,16 +68,37 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupFields() {
         tv1 = findViewById(R.id.tv1);
-        tv = findViewById(R.id.tv2);
+        tv2 = findViewById(R.id.tv2);
+        tv3 = findViewById(R.id.tv3);
+        tv4 = findViewById(R.id.tv4);
         et =   findViewById(R.id.et);
         View layoutMain = findViewById(R.id.main_activity);
         mSnackBar = Snackbar.make(layoutMain, "", Snackbar.LENGTH_INDEFINITE);
+
+        userEntryList = new UserEntryList();
+        mShowHistory = true;
+    }
+
+    private void showHistory() {
+
+        if(!mShowHistory) {
+
+            tv4.setText(userEntryList.getLastUserEntry());
+        }
+
+        else {
+
+            tv4.setText(userEntryList.getUserEntriesListAsString());
+        }
     }
 
     private void handleFABClick() {
 
         String value = et.getText().toString();
-        tv.setText("Echo Says: " + value);
+        tv2.setText("Echo Says: " + value);
+
+        userEntryList.addEntryToList(value);
+        showHistory();
     }
 
     @Override
@@ -80,19 +108,61 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            int itemId = item.getItemId();
+
+            if (itemId == R.id.action_about) {
+                showAbout();
+                return true;
+            }
+            else if (itemId == R.id.action_toggle_display_entries) {
+                toggleMenuItem(item);
+                mShowHistory = item.isChecked();
+                showHistory();
+                return true;}
+
+            else if (itemId == R.id.click_icon_clear_entries) {
+                toggleMenuItem(item);
+                clearHistory();
+                return true;}
+
+            return super.onOptionsItemSelected(item);
+
         }
 
-        return super.onOptionsItemSelected(item);
+        private void clearHistory() {
+
+            userEntryList.clearUserEntries();
+            tv4.setText("");
+        }
+
+            private void toggleMenuItem(MenuItem item) {
+                item.setChecked(!item.isChecked());
+            }
+
+    private void showAbout() {
+        Utils.showInfoDialog (MainActivity.this,
+                R.string.about_menu_title, R.string.about_message);
+    }
+
+    //TODO this method and OnResore(), Layout view as well, splash activity
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        // call the super-class's method to save fields, etc.
+        super.onSaveInstanceState(outState);
+
+    }
+
+
+
+
+
+    @Override  public boolean  onPrepareOptionsMenu (Menu menu)
+    {
+        menu.findItem (R.id.action_toggle_display_entries).setChecked (mShowHistory);
+        return super.onPrepareOptionsMenu (menu);
     }
 
 }
