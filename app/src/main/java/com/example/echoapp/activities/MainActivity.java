@@ -1,7 +1,8 @@
-package com.example.echoapp;
+package com.example.echoapp.activities;
 
 import android.os.Bundle;
 
+import com.example.echoapp.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
