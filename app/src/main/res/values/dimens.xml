@@ -1,4 +1,7 @@
 <resources>
     <dimen name="fab_margin">20dp</dimen>
     <dimen name="standard_margin">15dp</dimen>
+    <dimen name="layout_height">110dp</dimen>
+    <dimen name="constrain_width">275dp</dimen>
+    <dimen name="large_constrain_width">400dp</dimen>
 </resources>

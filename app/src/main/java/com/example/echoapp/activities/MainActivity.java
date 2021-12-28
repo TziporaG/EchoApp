@@ -15,6 +15,7 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
@@ -41,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private UserEntryList userEntryList;
     private boolean mShowHistory;
     private String mKEY_STRING;
+    private String mKEY_BOOLEAN;
 
 
     @Override
@@ -74,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
         tv2 = findViewById(R.id.tv2);
         tv3 = findViewById(R.id.tv3);
         tv4 = findViewById(R.id.tv4);
+        tv4.setMovementMethod(new ScrollingMovementMethod());
         et =   findViewById(R.id.et);
         View layoutMain = findViewById(R.id.main_activity);
         mSnackBar = Snackbar.make(layoutMain, "", Snackbar.LENGTH_INDEFINITE);
@@ -86,12 +89,13 @@ public class MainActivity extends AppCompatActivity {
 
         if(!mShowHistory) {
 
-            tv4.setText(userEntryList.getLastUserEntry());
+            tv4.setText("");
         }
 
         else {
-
-            tv4.setText(userEntryList.getUserEntriesListAsString());
+            if(userEntryList != null) {
+                tv4.setText(userEntryList.getUserEntriesListAsString());
+            }
         }
     }
 
@@ -147,27 +151,24 @@ public class MainActivity extends AppCompatActivity {
 
     private void showAbout() {
         Utils.showInfoDialog (MainActivity.this,
-                R.string.about_menu_title, R.string.about_message);
+                R.string.about_menu_title, R.string.about_menu);
     }
 
-    //TODO this method and OnResore(), Layout view as well, splash activity
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         // call the super-class's method to save fields, etc.
         super.onSaveInstanceState(outState);
         outState.putString(mKEY_STRING, getJSONStringFromEchoListObject(userEntryList));
+        outState.putBoolean(mKEY_BOOLEAN, mShowHistory);
     }
 
     @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         userEntryList = getEchoListObjectFromJSON(savedInstanceState.getString(mKEY_STRING));
+        mShowHistory = savedInstanceState.getBoolean(mKEY_BOOLEAN);
 
     }
-
-
-
-
 
     @Override  public boolean  onPrepareOptionsMenu (Menu menu)
     {

@@ -40,19 +40,21 @@
         <TextView
             android:id="@+id/tv2"
             style="@style/textView"
-            android:background="@color/primaryLightColor"
+            android:background="@color/secondaryColor"
             android:text="@string/about_message" />
 
         <TextView
             android:id="@+id/tv3"
             style="@style/textViewHeader"
-            android:layout_marginBottom="0dp"
             android:text="@string/tv_header" />
 
         <TextView
             android:id="@+id/tv4"
             style="@style/textView"
-            android:layout_marginTop="0dp"
-            android:text="" />
+            android:layout_height="@dimen/layout_height"
+            android:text=""
+            android:scrollbars = "vertical"/>
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

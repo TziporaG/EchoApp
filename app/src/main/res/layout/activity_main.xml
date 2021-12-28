@@ -32,9 +32,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
         app:srcCompat="@android:drawable/ic_media_play"
-        app:backgroundTint="@color/primaryLightColor"/>
+        app:backgroundTint="@color/primaryDarkColor"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
