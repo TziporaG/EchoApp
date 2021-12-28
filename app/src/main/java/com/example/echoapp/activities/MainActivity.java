@@ -1,6 +1,8 @@
 package com.example.echoapp.activities;
 
 import static com.example.echoapp.lib.Utils.showInfoDialog;
+import static com.example.echoapp.model.UserEntryList.getEchoListObjectFromJSON;
+import static com.example.echoapp.model.UserEntryList.getJSONStringFromEchoListObject;
 
 import android.os.Bundle;
 
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private Snackbar mSnackBar;
     private UserEntryList userEntryList;
     private boolean mShowHistory;
+    private String mKEY_STRING;
 
 
     @Override
@@ -152,6 +155,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         // call the super-class's method to save fields, etc.
         super.onSaveInstanceState(outState);
+        outState.putString(mKEY_STRING, getJSONStringFromEchoListObject(userEntryList));
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        userEntryList = getEchoListObjectFromJSON(savedInstanceState.getString(mKEY_STRING));
 
     }
 

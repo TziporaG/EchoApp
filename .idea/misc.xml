@@ -4,10 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1037037037037037" />
-        <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/activity_main.xml" value="0.10144927536231885" />
-        <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/content_main.xml" value="0.2514124293785311" />
+        <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/drawable/spalsh_background.xml" value="0.1" />
+        <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/drawable/splash_background.xml" value="0.1037037037037037" />
+        <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout-land/content_main.xml" value="0.22" />
+        <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout-land/main_include_entry_list.xml" value="0.1" />
+        <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/content_main.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/edit_text_box.xml" value="0.11413043478260869" />
         <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/first_text_veiw.xml" value="0.11413043478260869" />
+        <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/main_include_entry_list.xml" value="0.10572916666666667" />
         <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/text_veiw_two.xml" value="0.1" />
         <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/text_view_1.xml" value="0.11413043478260869" />
         <entry key="..\:/Users/tzipo/AndroidStudioProjects/EchoApp/app/src/main/res/layout/text_view_2.xml" value="0.11413043478260869" />
