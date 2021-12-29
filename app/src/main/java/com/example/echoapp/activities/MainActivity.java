@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private Snackbar mSnackBar;
     private UserEntryList userEntryList;
     private boolean mShowHistory;
-    private String mKEY_STRING;
-    private String mKEY_BOOLEAN;
+    private final String mKEY_STRING = "ECHOAPP";
+    private final String mKEY_BOOLEAN = "true";
 
 
     @Override
